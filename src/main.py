@@ -23,8 +23,6 @@ client = discord.Client(
     )
 )
 
-tree = discord.app_commands.CommandTree(client)
-
 # // ---- Functions
 def formatUserName(user: discord.User):
     return user.name if user.discriminator == "0" else f"{user.name}#{user.discriminator}"
