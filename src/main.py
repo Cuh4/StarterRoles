@@ -38,8 +38,8 @@ async def on_ready():
 @client.event
 async def on_member_join(member: discord.Member):
     # give roles
-    member.add_roles(
-        [member.guild.get_role(id) for id in config.rolesToGive],
+    await member.add_roles(
+        *[member.guild.get_role(id) for id in config.rolesToGive],
         reason = "Starter Roles"
     )
     
@@ -47,4 +47,4 @@ async def on_member_join(member: discord.Member):
     helpers.prettyprint.info(f"{formatUserName(member)} has been given {len(config.rolesToGive)} roles.")
     
 # // Start the bot
-client.run(config.botToken, log_handler = None)
+client.run(config.botToken)
