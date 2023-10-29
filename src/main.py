@@ -44,7 +44,7 @@ async def on_member_join(member: discord.Member):
     )
     
     # notify
-    helpers.prettyprint.info(f"{formatUserName(member)} has been given {len(config.rolesToGive)} roles.")
+    helpers.prettyprint.info(f"{formatUserName(member)} has been given {len(config.rolesToGive)} role(s).")
     
 # // Start the bot
 client.run(config.botToken, log_handler = None)
